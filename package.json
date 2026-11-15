@@ -1,0 +1,35 @@
+{
+  "name": "dsh-plugin-schema-check",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Assembly-time checks for DSH plugins: run apply() against a fake context and verify every registered tool parameter schema survives harness projection (catches `required: true` in a property, the mistake that crashes a session on install).",
+  "main": "lib/check.mjs",
+  "exports": {
+    ".": "./lib/check.mjs",
+    "./cli": "./cli.mjs",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "dsh-plugin-schema-check": "./cli.mjs"
+  },
+  "files": [
+    "lib",
+    "cli.mjs",
+    "selftest.mjs",
+    "README.md"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "deepseek",
+    "dsh",
+    "deepseek-harness",
+    "cordis",
+    "plugin",
+    "schema",
+    "lint"
+  ],
+  "scripts": {
+    "selftest": "node selftest.mjs"
+  }
+}
